@@ -45,6 +45,15 @@ body {
     width: 100%;
 }
 
+.icon-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-45%);
+    width: 20px;
+    height: 20px;
+    left: 2rem;
+}
+
 #search-input {
     padding: 1rem;
     color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
@@ -53,10 +62,12 @@ body {
     outline: none;
     border-radius: .5rem;
     font-size: 14px;
+    text-indent: 4rem;
 }
 
 ::placeholder {
     color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+    text-indent: 4rem;
 }
 
 :-ms-input-placeholder { /* Para Microsoft Edge */
