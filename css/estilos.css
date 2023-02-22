@@ -1,0 +1,74 @@
+:root {
+    --family: 'Nunito Sans';
+    --light: 300;
+    --semi-bold: 600;
+    --extra-bold: 800;
+    --Dark-Blue-Dark-Mode-Elements: hsl(209, 23%, 22%);
+    --Very-Dark-Blue-Dark-Mode-Background: hsl(207, 26%, 17%);
+    --Very-Dark-Blue-Light-Mode-Text: hsl(200, 15%, 8%);
+    --Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
+    --Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
+    --White-Dark-Mode-Text-i-Light-Mode-Elements: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: var(--family);
+    height: 100%;
+    width: 100%;
+    background-color: var(--Very-Dark-Blue-Dark-Mode-Background);
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+}
+
+.background-elements {
+    background-color: var(--Dark-Blue-Dark-Mode-Elements);
+}
+
+.header { 
+    height: 70px;
+    display: flex;
+}
+
+.tittle {
+    margin: 0;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem;
+}
+
+.wrapper-input {
+    position: relative;
+    width: 100%;
+}
+
+#search-input {
+    padding: 1rem;
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+    width: 60%;
+    border-style: none;
+    outline: none;
+    border-radius: .5rem;
+    font-size: 14px;
+}
+
+::placeholder {
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+}
+
+:-ms-input-placeholder { /* Para Microsoft Edge */
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+}
+  
+::-webkit-input-placeholder { /* Para Google Chrome, Safari, etc. */
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+}
+  
+
+
+#search-select {
+    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
+}
