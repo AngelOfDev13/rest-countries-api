@@ -23,7 +23,6 @@ const fetchData = async () => {
 const banderas = countries => {
     let elementos = '';
     for(let[index, item] of countries.entries()){
-
         let nombreNativo;
         for(let langCode in item.name.nativeName) {
             nombreNativo = `${item.name.nativeName[langCode].official}`;
@@ -83,18 +82,39 @@ const banderas = countries => {
                     </div>
                 </div>
                 `
-            const borders = item.borders.map(border => `<a href="#" class="a-country background-elements">${border}</a>`).join('');
-            elementos += `
-            <div class="container-border" id="borders">
-               <p> <b>Border Countries: </b> </p>    
-                ${borders}
-            </div>
-            `
+                const fronteras = item.borders.map((border) => {
+                   return aplhaFilter(border)
+                    .then(countryName => `<a href="detail.html?name=${countryName.split(' ').slice(0, 2).join(' ')}" class="a-country background-elements">${countryName.split(' ')[0]}</a>`)
+                    .catch((error) => {
+                        console.log(error);
+                    })
+                });
+                Promise.all(fronteras)
+                    .then((resultados) => {
+                        let fronterasHtml = '';
+                        for(i = 0; i < resultados.length; i++ ) {
+                            fronterasHtml += resultados[i];
+                        }
+                        elementos += 
+                        `
+                         <div class="container-border" id="borders">
+                         <p><b>Border Countries:</b></p>
+                         <div class="border-paises">
+                         ${fronterasHtml}
+                         </div>
+                         </div>
+                         </article>
+                             `;
+                            mainContainer.innerHTML = elementos
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                });
         }        
     }
     mainContainer.innerHTML = elementos;
 }
 
 backButton.addEventListener('click', e => {
-    window.location.href = '/';
+    window.location.href = 'index.html';
 });

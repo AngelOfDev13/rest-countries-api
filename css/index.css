@@ -70,9 +70,6 @@ body {
     border-style: none;
     border-radius: .5rem;
     padding: 1rem 3rem;
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; */
     outline: none;
     text-align: left;
 }
@@ -125,7 +122,7 @@ body {
 }
 
 .img-country {
-    border-radius: .5rem .5rem 0 0;
+    border-radius: .2rem .2rem 0 0;
     width: 100%;
     aspect-ratio: 1 / 0.6;
     object-fit: cover;
@@ -137,87 +134,66 @@ body {
     gap: 1rem;
     line-height: 1.5rem;
     padding: 1rem;
-    border-radius: 0 0 .5rem .5rem;
+    border-radius: 0 0 .2rem .2rem;
 }
 
 #parrafo { 
     margin-left: 4rem;
 }
 
-/* estilos de detail.html */
-
 a {
     text-decoration: none;
     color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
 }
 
-button {
-    display: flex;
-    gap: .5rem;
-    margin-top: 3rem;
-    margin-left: 4rem;
-    border-style: none;
-    color: var(--White-Dark-Mode-Text-i-Light-Mode-Elements);
-    padding: .7rem 2.7rem;
+@media screen and (max-width: 750px){
+    .search {
+        flex-direction: column;
+        gap: 2rem;
+        font-size: 13px;
+        margin-left: 1.5rem;
+    }
+
+    #search-select {
+        padding-left: 1rem;
+        width: 180px;
+        font-size: 13px;
+    }
+
+    #search-input {
+        text-indent: 1.5rem;
+        font-size: 13px;
+    }
+
+    .icon-search {
+        left: 1rem;
+        transform: translateY(-40%);
+    }
+    
+    ::placeholder {
+        text-indent: 1.5rem;
+    }
 }
 
-button:hover {
-    transform: scale(1.02);
-    cursor: pointer;
+@media screen and (max-width: 445px) {
+    #search-input {
+        width: 80%;
+    }
 }
 
-button:active {
-    transform: scale(0.95);
+@media screen and (max-width: 370px) {
+    #search-input {
+        width: 95%;
+    }
+
+    .countries-container {
+        margin: 0;
+    }
+
+    .tittle {
+        padding-left: 1.5rem;
+    }
 }
 
-p {
-    display: inline-block;
-}
 
-#detail-country-container {
-    display: flex;
-    margin: 3rem 4rem;    
-    gap: 6rem;
-}
 
-#country-info {
-    display: flex;
-    flex-direction: column;
-    /* gap: 4rem; */
-    line-height: 2rem;
-}
-
-.detail-img {
-    width: 25%;
-    height: 25%;
-}
-
-.detail-info {
-    display: flex;
-    gap: 4rem;
-}
-
-.detail-info-left {
-    display: flex;
-    flex-direction: column;
-}
-
-.detail-info-rigth {
-    display: flex;
-    flex-direction: column;
-}
-
-.container-border {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-top: 4rem;
-}
-
-.a-country {
-    padding: .3rem 1rem;
-}
-
-.a-country:hover {
-    cursor: pointer;
-}
